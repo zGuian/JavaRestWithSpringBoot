@@ -1,6 +1,8 @@
 package com.estudos.JavaRestWithSpringBoot.Services;
 
 import com.estudos.JavaRestWithSpringBoot.Models.Person;
+import org.apache.juli.ClassLoaderLogManager;
+import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -35,6 +37,20 @@ public class PersonServices {
         }
 
         return persons;
+    }
+
+    public Person createPerson(Person person) {
+        logger.info("Creating one person");
+        return person;
+    }
+
+    public Person updatePerson(Person person) {
+        logger.info("Updating one person");
+        return person;
+    }
+
+    public void deletePerson(String id) {
+        logger.info("Deleted one person:");
     }
 
     private Person mockPerson(int i) {
