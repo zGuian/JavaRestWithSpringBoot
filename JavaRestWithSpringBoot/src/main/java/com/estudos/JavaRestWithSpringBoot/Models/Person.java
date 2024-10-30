@@ -23,42 +23,24 @@ public class Person implements Serializable {
     private String lastName;
 
     @Column(nullable = false, length = 100)
-    private String adress;
+    private String address;
 
-    @Column(nullable = false, length = 6)
-    private String gender;
+    public Person() {}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(id, person.id) &&
-                Objects.equals(firstName, person.firstName) &&
-                Objects.equals(lastName, person.lastName) &&
-                Objects.equals(adress, person.adress) &&
-                Objects.equals(gender, person.gender);
+    public String getGender() {
+        return gender;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstName, lastName, adress, gender);
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public Long getId() {
-        return id;
+    public String getAddress() {
+        return address;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getLastName() {
@@ -69,22 +51,22 @@ public class Person implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getGender() {
-        return gender;
+    public Long getId() {
+        return id;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-
-    public Person() {}
+    @Column(nullable = false, length = 6)
+    private String gender;
 }
