@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS public.person
+CREATE TABLE IF NOT EXISTS person
 (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(80) NOT NULL,
