@@ -28,7 +28,8 @@ public class PersonController {
     @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     @Operation(summary = "Finds all people", description = "Finds all people", tags = {"People"}, responses = {
             @ApiResponse(description = "Success", responseCode = "200",
-                    content = { @Content(schema = @Schema(implementation = PersonVO.class)) }),
+                    content = { @Content(mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = PersonVO.class)))}),
             @ApiResponse(description = "Bad request", responseCode = "400", content = {@Content}),
             @ApiResponse(description = "Unauthorized", responseCode = "401", content = {@Content}),
             @ApiResponse(description = "Not found", responseCode = "404", content = {@Content}),
@@ -41,8 +42,7 @@ public class PersonController {
     @GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     @Operation(summary = "Finds a person", description = "Finds a person", tags = {"People"}, responses = {
             @ApiResponse(description = "Success", responseCode = "200",
-                    content = { @Content(mediaType = "application/json",
-                            array = @ArraySchema(schema = @Schema(implementation = PersonVO.class)))}),
+                    content = { @Content(schema = @Schema(implementation = PersonVO.class)) }),
             @ApiResponse(description = "No Content", responseCode = "204", content = {@Content}),
             @ApiResponse(description = "Bad request", responseCode = "400", content = {@Content}),
             @ApiResponse(description = "Unauthorized", responseCode = "401", content = {@Content}),
