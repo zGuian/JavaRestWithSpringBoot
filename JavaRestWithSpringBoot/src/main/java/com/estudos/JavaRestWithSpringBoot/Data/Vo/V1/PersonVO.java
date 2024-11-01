@@ -1,17 +1,30 @@
 package com.estudos.JavaRestWithSpringBoot.Data.Vo.V1;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
 
+@JsonPropertyOrder({"id", "firstName", "lastName", "adress", "gender"})
 public class PersonVO implements Serializable {
 
     @Serial
     private static  final long serialVersionUID = 1L;
+
+    @JsonProperty("id")
     private Long id;
+
+    @JsonProperty("FirstName")
     private String firstName;
+
+    @JsonProperty("LastName")
     private String lastName;
+
+    @JsonProperty("Address")
     private String adress;
+
+    @JsonProperty("Gender")
     private String gender;
 
     public PersonVO() {}
