@@ -1,40 +1,26 @@
-package com.estudos.JavaRestWithSpringBoot.Data.Vo.V2;
+package com.estudos.JavaRestWithSpringBoot.IntegrationTests.Vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Date;
 
-@JsonPropertyOrder({"id", "firstName", "lastName", "adress", "gender", "birthDay"})
-public class PersonVOV2 implements Serializable {
-
+public class PersonVO implements Serializable {
     @Serial
     private static  final long serialVersionUID = 1L;
-    @JsonProperty("id")
     private Long id;
-
-    @JsonProperty("FirstName")
     private String firstName;
-
-    @JsonProperty("LastName")
     private String lastName;
-
-    @JsonProperty("Address")
-    private String address;
-
-    @JsonProperty("Gender")
+    private String adress;
     private String gender;
 
-    @JsonProperty("BirthDay")
-    private Date birthDay;
-
-    public PersonVOV2() {}
+    public PersonVO() {}
 
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -42,6 +28,7 @@ public class PersonVOV2 implements Serializable {
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -53,16 +40,19 @@ public class PersonVOV2 implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public String getAddress() {
+        return adress;
+    }
+
+    public void setAddress(String adress) {
+        this.adress = adress;
+    }
 
     public String getGender() {
         return gender;
     }
+
     public void setGender(String gender) {
         this.gender = gender;
     }
-
-    public Date getBirthDay() { return birthDay; }
-    public void setBirthDay(Date birthDay) { this.birthDay = birthDay; }
 }
