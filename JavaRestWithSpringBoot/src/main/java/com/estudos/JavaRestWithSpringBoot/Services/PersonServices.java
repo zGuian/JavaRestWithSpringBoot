@@ -65,7 +65,7 @@ public class PersonServices {
     public void deletePerson(Long id) {
         logger.info("Deleted one person:");
         var entity = repository.findById(id).orElseThrow(() ->
-                new ResourceNotFoundException("No records found for this ID!"));;
+                new ResourceNotFoundException("No records found for this ID!"));
         repository.deleteById(id);
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 
     @Value("${cors.OriginPatterns:default}")
-    private String corsOriginPatterns = "";
+    private final String corsOriginPatterns = "";
 
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
